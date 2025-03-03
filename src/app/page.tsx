@@ -133,6 +133,9 @@ export default async function Home() {
                     </Box>
                 </Flex>
             </Center>
+            <Center pb={12} pt={12}>
+                <Heading size="6xl">Screenshots</Heading>
+            </Center>
             <Carousels />
         </>
     );

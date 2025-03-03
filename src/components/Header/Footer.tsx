@@ -24,10 +24,10 @@ export const Footer: NextPage = () => {
                 </Text>
 
                 <Flex gap={6} py={[4]}>
-                    <NextLink href={PRIVACY_POLICY_LINK} passHref>
+                    <NextLink href={PRIVACY_POLICY_LINK} passHref target="_blank">
                         <Text textStyle="sm">Privacy Policy</Text>
                     </NextLink>
-                    <NextLink href={TERMS_AND_CONDITIONS_LINK} passHref>
+                    <NextLink href={TERMS_AND_CONDITIONS_LINK} passHref target="_blank">
                         <Text textStyle="sm">Terms of service</Text>
                     </NextLink>
                 </Flex>
