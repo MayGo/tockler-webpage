@@ -11,14 +11,14 @@ import { TocklerLogoText } from './TocklerLogoText';
 export const Header: NextPage = () => {
     return (
         <Box as="header" textAlign="left">
-            <Flex flexDirection={['row', 'row']} align="center" justify="space-between" gap={5} maxW="full">
+            <Flex flexDirection={['row', 'row']} align="center" justify="space-between" gap={5} maxW="full" py={2}>
                 <Link href="/">
                     <TocklerLogoText height="25px" color="current" />
                 </Link>
 
                 <Box flex="1" />
 
-                <HStack pr={3}>
+                <HStack pr={3} gap={2}>
                     <ProductHuntButton />
                     <IconButton
                         size="md"
@@ -26,7 +26,6 @@ export const Header: NextPage = () => {
                         aria-label={`Go to github`}
                         variant="ghost"
                         color="current"
-                        marginLeft="2"
                         asChild
                     >
                         <a href="https://github.com/MayGo/tockler" target="_blank">
@@ -34,15 +33,7 @@ export const Header: NextPage = () => {
                         </a>
                     </IconButton>
 
-                    <IconButton
-                        size="md"
-                        fontSize="lg"
-                        aria-label={`Email`}
-                        variant="ghost"
-                        color="current"
-                        marginLeft="2"
-                        asChild
-                    >
+                    <IconButton size="md" fontSize="lg" aria-label={`Email`} variant="ghost" color="current" asChild>
                         <a href="mailto:info@trimatech.ee">
                             <MdEmail />
                         </a>
