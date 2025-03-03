@@ -1,7 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import NextLink from 'next/link';
-import { Logo } from './Logo';
 
 import { PRIVACY_POLICY_LINK, TERMS_AND_CONDITIONS_LINK } from '~/utils/constants';
 import { AwesomeDivider } from '../ui/AwesomeDivider';
@@ -17,7 +16,12 @@ export const Footer: NextPage = () => {
                 w="full"
                 h="full"
             >
-                <Logo size="sm" />
+                <Text textStyle="sm">
+                    Created by Maigo Erit @{' '}
+                    <a href="https://trimatech.dev" target="_blank">
+                        trimatech.dev
+                    </a>
+                </Text>
 
                 <Flex gap={6} py={[4]}>
                     <NextLink href={PRIVACY_POLICY_LINK} passHref>

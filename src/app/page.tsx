@@ -47,7 +47,7 @@ export default function Home() {
                     <Text fontSize="xs">
                         Latest: v3.21.12.{' '}
                         <Link color="blue.500" href="https://github.com/MayGo/tockler/releases/latest">
-                            Releases Page
+                            <b>Releases Page</b>
                         </Link>
                     </Text>
                 </VStack>
