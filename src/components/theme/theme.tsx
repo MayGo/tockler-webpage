@@ -2,72 +2,30 @@
 import { createSystem, defaultConfig, defineConfig, mergeConfigs } from '@chakra-ui/react';
 import { mainGray } from './theme.utils';
 
-const primaryColor = '#2563EB';
-export const bgColorTransparent = 'rgba(238, 242, 255, 0.8)';
-export const bgColorWhiteTransparent = 'rgba(255, 255, 255, 0.8)';
-
-const textColorGray = '#6C6969';
-const borderColor = '#84B2FE';
-const shadowColor = '#D1DCFF';
-const yellowColor = '#FFD646';
-const yellowColorBg = '#FFFAEF';
+export const MAIN_THEME_COLOR = '#7C3AED';
 
 const myConfig = defineConfig({
     globalCss: {
         html: {
-            colorPalette: 'yellow',
+            colorPalette: 'black',
             scrollBehavior: 'smooth !important',
             color: mainGray,
             '--chakra-radii-l1': 'xl',
             '--chakra-radii-l2': '2xl',
             '--chakra-radii-l3': 'xl'
+        },
+        body: {
+            backgroundColor: { _light: 'gray.50', _dark: 'gray.900' }
         }
     },
     theme: {
         tokens: {
             colors: {
                 primary: {
-                    value: primaryColor
+                    value: MAIN_THEME_COLOR
                 },
                 black: {
                     value: '#000000'
-                },
-                textColorGray: {
-                    value: textColorGray
-                },
-                yellowColor: {
-                    value: yellowColor
-                },
-                yellowColorBg: {
-                    value: yellowColorBg
-                },
-                mainGray: {
-                    value: mainGray
-                },
-                bgColor: {
-                    value: bgColorTransparent
-                },
-                borderColor: {
-                    value: borderColor
-                },
-                shadowColor: {
-                    value: shadowColor
-                },
-                bgColorWhiteTransparent: {
-                    value: bgColorWhiteTransparent
-                },
-                yellow: {
-                    '50': { value: '#fefbe8' },
-                    '100': { value: '#fff8c2' },
-                    '200': { value: '#ffec89' },
-                    '300': { value: '#ffdb49' },
-                    '400': { value: '#fdc512' },
-                    '500': { value: '#ecab06' },
-                    '600': { value: '#cc8302' },
-                    '700': { value: '#a35c05' },
-                    '800': { value: '#86480d' },
-                    '900': { value: '#723b11' },
-                    '950': { value: '#431e05' }
                 }
             },
             fonts: {

@@ -3,12 +3,13 @@ import { type Metadata } from 'next';
 
 import { Box } from '@chakra-ui/react';
 import { Footer } from '~/components/Header/Footer';
-import { HeaderNavbar } from '~/components/Header/HeaderNavbar';
 import { ThemeProvider } from '~/components/theme/ThemeProvider';
 
 import { Analytics } from '@vercel/analytics/react';
 import { M_PLUS_Rounded_1c } from 'next/font/google';
 import { Suspense } from 'react';
+import { BgLogo } from '~/components/BgLogo';
+import { Header } from '~/components/Header/Header';
 import { Toaster } from '~/components/ui/Toaster';
 import { getURL } from '~/utils/helpers';
 
@@ -74,14 +75,24 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <body className={GeistSans.className}>
                 <ThemeProvider>
                     <Box>
-                        <Box maxW="1000px" mx="auto" px={[0, 2, 4]}>
-                            <HeaderNavbar />
+                        <Box
+                            maxW="1000px"
+                            mx="auto"
+                            px={[0, 2, 4]}
+                            bg="whiteAlpha.600"
+                            zIndex={2}
+                            position="relative"
+                            backdropFilter="blur(30px)"
+                            boxShadow="sm"
+                        >
+                            <Header />
 
                             {children}
 
                             <Footer />
                         </Box>
                     </Box>
+                    <BgLogo />
                     <Suspense>
                         <Toaster />
                     </Suspense>

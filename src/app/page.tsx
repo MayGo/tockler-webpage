@@ -1,95 +1,128 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import { Box, Button, Center, Flex, Grid, Heading, HStack, Image, Link, Text, VStack } from '@chakra-ui/react';
+
+import { CgDarkMode } from 'react-icons/cg';
+import { FaApple, FaChartBar, FaDatabase, FaHistory, FaLinux, FaWindows } from 'react-icons/fa';
+import { IoMdAnalytics, IoMdNotifications } from 'react-icons/io';
+import { Carousels } from '~/components/Carousels';
+import { FeatureItem } from '~/components/FeatureItem';
+import { TocklerLogoText } from '~/components/Header/TocklerLogoText';
+import { ListItem } from '~/components/ListItem';
+import { useColorMode, useColorModeValue } from '~/components/ui/color-mode';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    const trayImg = useColorModeValue(
+        'https://github.com/MayGo/tockler/raw/master/screenshots/light/tockler-tray.png',
+        'https://github.com/MayGo/tockler/raw/master/screenshots/dark/tockler-tray.png'
+    );
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    const { toggleColorMode } = useColorMode();
+    const colorModeText = useColorModeValue('dark', 'light');
+
+    return (
+        <>
+            <VStack gap={8} pt={12} align="center">
+                <TocklerLogoText height="100px" />
+                <Text fontSize="md">Track your time or look when and what were you doing at some point in time.</Text>
+                <VStack gap={4}>
+                    <HStack>
+                        <Button variant="outline" as={Link} textDecoration="none !important" asChild>
+                            <a href="https://github.com/MayGo/tockler/releases/download/v3.21.12/Tockler-3.21.12.dmg">
+                                <FaApple /> macOS
+                            </a>
+                        </Button>
+                        <Button variant="outline" as={Link} textDecoration="none !important" asChild>
+                            <a href="https://github.com/MayGo/tockler/releases/download/v3.21.12/tockler-3.21.12-setup-win.exe">
+                                <FaWindows /> Windows
+                            </a>
+                        </Button>
+                        <Button variant="outline" as={Link} textDecoration="none !important" asChild>
+                            <a href="https://github.com/MayGo/tockler/releases/download/v3.21.12/Tockler-3.21.12.AppImage">
+                                <FaLinux /> Linux
+                            </a>
+                        </Button>
+                    </HStack>
+                    <Text fontSize="xs">
+                        Latest: v3.21.12.{' '}
+                        <Link color="blue.500" href="https://github.com/MayGo/tockler/releases/latest">
+                            Releases Page
+                        </Link>
+                    </Text>
+                </VStack>
+                <Box bg="orange.600" p={4} borderRadius="2xl" color="white">
+                    <Text fontSize="2xl">
+                        Tockler is <b>free</b> to download and use.
+                    </Text>
+                    <Text fontSize="md" w="400px" textAlign="center">
+                        Tockler is maintained as an open-source project.
+                        <br /> If you find it useful, consider{' '}
+                        <Link color="blue.300" href="https://github.com/sponsors/MayGo">
+                            <b>Supporting its development on GitHub</b>
+                        </Link>
+                        .
+                    </Text>
+                </Box>
+            </VStack>
+            <Center pb={12} pt={12}>
+                <Heading size="6xl">Features</Heading>
+            </Center>
+            <Center>
+                <Box width="100%" maxW="1200px" px={5}>
+                    <Grid
+                        templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
+                        gap={12}
+                    >
+                        <FeatureItem title="History" icon={<FaHistory />}>
+                            With Tockler you can go back in time and see what you were working on. You can get
+                            information on what apps were used - exactly at what time - and what title the application
+                            had at that moment. This is enough to determine when and how much you did something.
+                        </FeatureItem>
+                        <FeatureItem title="Tracking" icon={<FaChartBar />}>
+                            Track how you spent your time on a computer. Tockler tracks active applications usage and
+                            computer state. It records active application titles. It tracks idle, offline and online
+                            state. You can see this data with nice interactive timeline chart.
+                        </FeatureItem>
+                        <FeatureItem title="Analyze" icon={<IoMdAnalytics />}>
+                            Analyze your computer usage. See your total online time today, yesterday or any other day.
+                            In monthly calendar views and with charts.
+                        </FeatureItem>
+                        <FeatureItem title="Dark mode" icon={<CgDarkMode />}>
+                            Dark Mode support. Can automatically change when OS mode changes. You can click{' '}
+                            <Link color="blue.500" onClick={toggleColorMode}>
+                                here
+                            </Link>{' '}
+                            to change screenshots to {colorModeText} ones.
+                        </FeatureItem>
+                        <FeatureItem title="Local data" icon={<FaDatabase />}>
+                            Works without internet access. All data is stored locally on your device and is never sent
+                            outside your device. You can search items and all data is exportable to CSV.
+                        </FeatureItem>
+                        <FeatureItem title="Reminders" icon={<IoMdNotifications />}>
+                            Configure notifications to be fired if application with required title is opened.
+                        </FeatureItem>
+                    </Grid>
+                </Box>
+            </Center>
+            <Center>
+                <Flex width="100%" maxW="1000px" pt="110px" px={5}>
+                    <Box flex={1}>
+                        <Heading size={['2xl', '3xl', '4xl', '6xl']}>Tray window</Heading>
+                        <VStack align="start" pl={[0, 0, 7, 7]} pt={7} gap={7}>
+                            <ListItem>Start tasks manually</ListItem>
+                            <ListItem>Overview of online time</ListItem>
+                            <ListItem>Current online time length</ListItem>
+                            <ListItem>Last online time length</ListItem>
+                        </VStack>
+                    </Box>
+                    <Box flex={1}>
+                        <Text fontSize="60px">
+                            <Image src={trayImg} alt="Tockler tray window interface" />
+                        </Text>
+                    </Box>
+                </Flex>
+            </Center>
+            <Carousels />
+        </>
+    );
 }
