@@ -1,26 +1,18 @@
-'use client';
-
-import { Box, Center, chakra, Flex, Grid, Heading, HStack, Image, Link, Text, VStack } from '@chakra-ui/react';
+import { Box, Center, chakra, Flex, Grid, Heading, HStack, Link, Text, VStack } from '@chakra-ui/react';
 
 import { CgDarkMode } from 'react-icons/cg';
 import { FaApple, FaChartBar, FaDatabase, FaHistory, FaLinux, FaWindows } from 'react-icons/fa';
 import { IoMdAnalytics, IoMdNotifications } from 'react-icons/io';
 import { Carousels } from '~/components/Carousels';
+import { ColorModeText } from '~/components/ColorModeText';
+import { ColorToggleLink } from '~/components/ColorToggleLink';
 import { FeatureItem } from '~/components/FeatureItem';
 import { TocklerLogoText } from '~/components/Header/TocklerLogoText';
 import { ListItem } from '~/components/ListItem';
+import { TrayImage } from '~/components/TrayImage';
 import { Button } from '~/components/ui/button';
-import { useColorMode, useColorModeValue } from '~/components/ui/color-mode';
 
 export default function Home() {
-    const trayImg = useColorModeValue(
-        'https://github.com/MayGo/tockler/raw/master/screenshots/light/tockler-tray.png',
-        'https://github.com/MayGo/tockler/raw/master/screenshots/dark/tockler-tray.png'
-    );
-
-    const { toggleColorMode } = useColorMode();
-    const colorModeText = useColorModeValue('dark', 'light');
-
     return (
         <>
             <VStack gap={8} pt={12} align="center">
@@ -47,7 +39,7 @@ export default function Home() {
                     <Text fontSize="xs">
                         Latest: v3.21.12.{' '}
                         <Link color="blue.500" href="https://github.com/MayGo/tockler/releases/latest">
-                            <b>Releases Page</b>
+                            Releases Page
                         </Link>
                     </Text>
                 </VStack>
@@ -101,10 +93,7 @@ export default function Home() {
                         </FeatureItem>
                         <FeatureItem title="Dark mode" icon={<CgDarkMode />}>
                             Dark Mode support. Can automatically change when OS mode changes. You can click{' '}
-                            <Link color="blue.500" onClick={toggleColorMode}>
-                                here
-                            </Link>{' '}
-                            to change screenshots to {colorModeText} ones.
+                            <ColorToggleLink>here</ColorToggleLink> to change screenshots to <ColorModeText /> ones.
                         </FeatureItem>
                         <FeatureItem title="Local data" icon={<FaDatabase />}>
                             Works without internet access. All data is stored locally on your device and is never sent
@@ -129,7 +118,7 @@ export default function Home() {
                     </Box>
                     <Box flex={1}>
                         <Text fontSize="60px">
-                            <Image src={trayImg} alt="Tockler tray window interface" />
+                            <TrayImage />
                         </Text>
                     </Box>
                 </Flex>
