@@ -1,6 +1,6 @@
 'use client';
 
-import { useColorModeValue } from './ui/color-mode';
+import { useColorModeValue } from './theme/color-mode';
 
 export const ColorModeText = () => {
     const colorModeText = useColorModeValue('dark', 'light');

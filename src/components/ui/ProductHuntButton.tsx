@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useColorModeValue } from './color-mode';
+import { useColorModeValue } from '../theme/color-mode';
 
 export const ProductHuntButton = () => {
     const colorProductHunt = useColorModeValue('light', 'dark');

@@ -6,15 +6,12 @@ import { MdEmail } from 'react-icons/md';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { AwesomeDivider } from '../ui/AwesomeDivider';
 import { ProductHuntButton } from '../ui/ProductHuntButton';
-import { Logo } from './Logo';
 import { TocklerLogoText } from './TocklerLogoText';
 
 export const Header: NextPage = () => {
     return (
         <Box as="header" textAlign="left">
             <Flex flexDirection={['row', 'row']} align="center" justify="space-between" gap={5} maxW="full">
-                <Logo />
-
                 <Link href="/">
                     <TocklerLogoText height="25px" color="current" />
                 </Link>

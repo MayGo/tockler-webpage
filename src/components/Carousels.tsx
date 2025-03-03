@@ -1,7 +1,7 @@
 'use client';
 import { Box, Flex, HStack, Image, Text } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useColorModeValue } from './ui/color-mode';
+import { useColorModeValue } from './theme/color-mode';
 
 const lightSlides = [
     { img: 'https://github.com/MayGo/tockler/raw/master/screenshots/light/tockler-timeline.png' },

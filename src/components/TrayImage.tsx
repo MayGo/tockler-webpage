@@ -1,7 +1,7 @@
 'use client';
 
 import { Image } from '@chakra-ui/react';
-import { useColorModeValue } from './ui/color-mode';
+import { useColorModeValue } from './theme/color-mode';
 
 export const TrayImage = () => {
     const trayImg = useColorModeValue(

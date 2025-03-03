@@ -1,7 +1,7 @@
 'use client';
 
 import { Link } from '@chakra-ui/react';
-import { useColorMode } from './ui/color-mode';
+import { useColorMode } from './theme/color-mode';
 
 export const ColorToggleLink = ({ children }: { children: React.ReactNode }) => {
     const { toggleColorMode } = useColorMode();

@@ -3,7 +3,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { type ThemeProviderProps } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { ColorModeProvider } from './color-mode';
+import { ColorModeProvider } from './ColorModeProvider';
 import { sytemTheme } from './theme';
 
 export function ThemeProvider(props: ThemeProviderProps) {

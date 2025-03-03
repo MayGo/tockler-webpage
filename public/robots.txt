@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tockler.trimatech.dev
+
+# Sitemaps
+Sitemap: https://tockler.trimatech.dev/sitemap.xml
