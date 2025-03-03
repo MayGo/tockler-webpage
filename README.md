@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tockler Website
+
+![Tockler Website](tockler-website.png)
+
+This is a modern [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), utilizing Next.js 15 with React 19 and TypeScript.
+
+## Features
+
+-   🚀 Built with Next.js 15 and React 19
+-   🎨 Styled with Chakra UI v3
+-   🌓 Dark/Light mode support with next-themes
+-   📱 Responsive design
+-   📊 Analytics with Vercel
+-   🗺️ Automatic sitemap generation
+-   🔍 SEO optimized
+-   ⚡ Turbopack for fast development
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+-   Node.js (Latest LTS version recommended)
+-   pnpm (Package manager)
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/tockler-webpage.git
+    cd tockler-webpage
+    ```
+
+2. Install dependencies:
+    ```bash
+    pnpm install
+    ```
+
+### Development
+
+Run the development server with Turbopack:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   `pnpm dev` - Start the development server with Turbopack
+-   `pnpm build` - Build the application for production
+-   `pnpm start` - Start the production server
+-   `pnpm lint` - Run ESLint for code linting
+-   `pnpm postbuild` - Generate sitemap (runs automatically after build)
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+The project follows the standard Next.js 13+ App Router structure:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/          # App router pages and layouts
+├── components/   # Reusable React components
+├── lib/         # Utility functions and configurations
+└── styles/      # Global styles and theme configurations
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies
 
-## Deploy on Vercel
+-   **Framework:** Next.js 15.2.0
+-   **UI Library:** React 19
+-   **Styling:** Chakra UI 3.8.1
+-   **Language:** TypeScript
+-   **Package Manager:** pnpm
+-   **Development Server:** Turbopack
+-   **Code Quality:** ESLint, Prettier
+-   **Analytics:** Vercel Analytics
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
