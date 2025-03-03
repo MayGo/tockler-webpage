@@ -6,13 +6,9 @@ export const FeatureItem = ({
     children
 }: Readonly<{ icon: React.ReactNode; title: string; children: React.ReactNode }>) => (
     <Box>
-        <Flex pb={5} alignItems="flex-end">
-            <Box pr={5}>
-                <Icon
-                    fontSize={['20px', '30px', '50px', '60px']}
-                    height={['20px', '30px', '50px', '60px']}
-                    color="primary"
-                >
+        <Flex pb={4} alignItems="center">
+            <Box pr={4}>
+                <Icon fontSize={['20px', '30px', '40px']} height={['20px', '30px', '40px']} color="primary">
                     {icon}
                 </Icon>
             </Box>

@@ -19,16 +19,12 @@ export const Footer: NextPage = () => {
             >
                 <Logo size="sm" />
 
-                <Flex gap={6} py={[4, 4, 4, 8]}>
+                <Flex gap={6} py={[4]}>
                     <NextLink href={PRIVACY_POLICY_LINK} passHref>
-                        <Text textStyle="sm" fontWeight="bold">
-                            Privacy Policy
-                        </Text>
+                        <Text textStyle="sm">Privacy Policy</Text>
                     </NextLink>
                     <NextLink href={TERMS_AND_CONDITIONS_LINK} passHref>
-                        <Text textStyle="sm" fontWeight="bold">
-                            Terms of service
-                        </Text>
+                        <Text textStyle="sm">Terms of service</Text>
                     </NextLink>
                 </Flex>
             </Flex>

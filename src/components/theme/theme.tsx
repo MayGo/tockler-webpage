@@ -1,5 +1,6 @@
 'use client';
 import { createSystem, defaultConfig, defineConfig, mergeConfigs } from '@chakra-ui/react';
+
 import { mainGray } from './theme.utils';
 
 export const MAIN_THEME_COLOR = '#7C3AED';
@@ -9,12 +10,13 @@ const myConfig = defineConfig({
         html: {
             colorPalette: 'black',
             scrollBehavior: 'smooth !important',
-            color: mainGray,
+
             '--chakra-radii-l1': 'xl',
             '--chakra-radii-l2': '2xl',
             '--chakra-radii-l3': 'xl'
         },
         body: {
+            color: { _light: mainGray, _dark: 'gray.50' },
             backgroundColor: { _light: 'gray.50', _dark: 'gray.900' }
         }
     },
@@ -26,6 +28,9 @@ const myConfig = defineConfig({
                 },
                 black: {
                     value: '#000000'
+                },
+                mainGray: {
+                    value: mainGray
                 }
             },
             fonts: {

@@ -32,7 +32,7 @@ export const Header: NextPage = () => {
                         marginLeft="2"
                         asChild
                     >
-                        <a href="https://github.com/MayGo/tockler">
+                        <a href="https://github.com/MayGo/tockler" target="_blank">
                             <FaGithub />
                         </a>
                     </IconButton>

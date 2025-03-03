@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, Center, Flex, Grid, Heading, HStack, Image, Link, Text, VStack } from '@chakra-ui/react';
+import { Box, Center, chakra, Flex, Grid, Heading, HStack, Image, Link, Text, VStack } from '@chakra-ui/react';
 
 import { CgDarkMode } from 'react-icons/cg';
 import { FaApple, FaChartBar, FaDatabase, FaHistory, FaLinux, FaWindows } from 'react-icons/fa';
@@ -9,6 +9,7 @@ import { Carousels } from '~/components/Carousels';
 import { FeatureItem } from '~/components/FeatureItem';
 import { TocklerLogoText } from '~/components/Header/TocklerLogoText';
 import { ListItem } from '~/components/ListItem';
+import { Button } from '~/components/ui/button';
 import { useColorMode, useColorModeValue } from '~/components/ui/color-mode';
 
 export default function Home() {
@@ -27,17 +28,17 @@ export default function Home() {
                 <Text fontSize="md">Track your time or look when and what were you doing at some point in time.</Text>
                 <VStack gap={4}>
                     <HStack>
-                        <Button variant="outline" as={Link} textDecoration="none !important" asChild>
+                        <Button variant="outline" asChild>
                             <a href="https://github.com/MayGo/tockler/releases/download/v3.21.12/Tockler-3.21.12.dmg">
                                 <FaApple /> macOS
                             </a>
                         </Button>
-                        <Button variant="outline" as={Link} textDecoration="none !important" asChild>
+                        <Button variant="outline" asChild>
                             <a href="https://github.com/MayGo/tockler/releases/download/v3.21.12/tockler-3.21.12-setup-win.exe">
                                 <FaWindows /> Windows
                             </a>
                         </Button>
-                        <Button variant="outline" as={Link} textDecoration="none !important" asChild>
+                        <Button variant="outline" asChild>
                             <a href="https://github.com/MayGo/tockler/releases/download/v3.21.12/Tockler-3.21.12.AppImage">
                                 <FaLinux /> Linux
                             </a>
@@ -50,15 +51,26 @@ export default function Home() {
                         </Link>
                     </Text>
                 </VStack>
-                <Box bg="orange.600" p={4} borderRadius="2xl" color="white">
-                    <Text fontSize="2xl">
-                        Tockler is <b>free</b> to download and use.
-                    </Text>
+                <Text fontSize="2xl">
+                    Tockler is{' '}
+                    <chakra.span color="primary" fontWeight="bold" bg="whiteAlpha.800" p={1} rounded="md">
+                        free
+                    </chakra.span>{' '}
+                    to download and use.
+                </Text>
+                <Box
+                    bg="blackAlpha.700"
+                    border="1px solid"
+                    borderColor="gray.900"
+                    p={4}
+                    borderRadius="2xl"
+                    color="white"
+                >
                     <Text fontSize="md" w="400px" textAlign="center">
                         Tockler is maintained as an open-source project.
                         <br /> If you find it useful, consider{' '}
                         <Link color="blue.300" href="https://github.com/sponsors/MayGo">
-                            <b>Supporting its development on GitHub</b>
+                            <b>supporting its development on GitHub</b>
                         </Link>
                         .
                     </Text>

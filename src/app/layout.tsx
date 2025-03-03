@@ -22,9 +22,9 @@ const mPlusRounded = M_PLUS_Rounded_1c({
 });
 
 const meta = {
-    title: 'Horoscope AI - Your Personal Astrological Guide',
+    title: 'Tockler - Track Your Computer Usage and Working Time',
     description:
-        'Get personalized daily horoscopes powered by AI. Choose your style - playful, mystical, or direct - and receive custom astrological guidance tailored to your zodiac sign and preferences.',
+        'Track and analyze how you spend time on your computer. Monitor application usage, working hours, and productivity with detailed timelines and insights.',
     cardImage: '/og.png',
     robots: 'follow, index',
     favicon: '/favicon.ico',
@@ -37,16 +37,17 @@ export async function generateMetadata(): Promise<Metadata> {
         description: meta.description,
         referrer: 'origin-when-cross-origin',
         keywords: [
-            'Horoscope',
-            'Astrology',
-            'AI Horoscope',
-            'Daily Horoscope',
-            'Zodiac Signs',
-            'Personalized Horoscope'
+            'Time Tracking',
+            'Productivity',
+            'Application Usage',
+            'Work Analytics',
+            'Computer Usage',
+            'Time Management',
+            'Activity Monitoring'
         ],
-        authors: [{ name: 'Horoscope AI', url: 'https://horoscope.trimatech.dev/' }],
-        creator: 'Horoscope AI',
-        publisher: 'Horoscope AI',
+        authors: [{ name: 'Tockler', url: 'https://tockler.trimatech.dev/' }],
+        creator: 'Tockler',
+        publisher: 'Tockler',
         robots: meta.robots,
         icons: { icon: meta.favicon },
         metadataBase: new URL(meta.url),
@@ -60,8 +61,8 @@ export async function generateMetadata(): Promise<Metadata> {
         },
         twitter: {
             card: 'summary_large_image',
-            site: '@HoroscopeAI',
-            creator: '@HoroscopeAI',
+            site: '@Tockler',
+            creator: '@Tockler',
             title: meta.title,
             description: meta.description,
             images: [meta.cardImage]
@@ -79,7 +80,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                             maxW="1000px"
                             mx="auto"
                             px={[0, 2, 4]}
-                            bg="whiteAlpha.600"
                             zIndex={2}
                             position="relative"
                             backdropFilter="blur(30px)"
