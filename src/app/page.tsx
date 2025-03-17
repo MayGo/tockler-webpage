@@ -1,58 +1,37 @@
-import { Box, Center, Flex, Grid, Heading, HStack, Link, Text, VStack } from '@chakra-ui/react';
+import { Box, Center, Flex, Grid, Heading, Link, Text, VStack } from '@chakra-ui/react';
 
 import { CgDarkMode } from 'react-icons/cg';
-import { FaApple, FaChartBar, FaDatabase, FaHistory, FaLinux, FaWindows } from 'react-icons/fa';
+import { FaChartBar, FaDatabase, FaHistory } from 'react-icons/fa';
 import { IoMdAnalytics, IoMdNotifications } from 'react-icons/io';
 import { Carousels } from '~/components/Carousels';
 import { ColorModeText } from '~/components/ColorModeText';
 import { ColorToggleLink } from '~/components/ColorToggleLink';
+import { DownloadOptions } from '~/components/DownloadOptions';
 import { FeatureItem } from '~/components/FeatureItem';
 import { TocklerLogoText } from '~/components/Header/TocklerLogoText';
 import { ListItem } from '~/components/ListItem';
 import { TrayImage } from '~/components/TrayImage';
-import { Button } from '~/components/ui/button';
 import { getLatestTocklerRelease } from '~/utils/github';
 
 export default async function Home() {
     const release = await getLatestTocklerRelease();
     const version = release?.version || '3.21.12'; // Fallback version if API fails
 
-    const downloadUrls = release?.downloadUrls || {
-        mac: 'https://github.com/MayGo/tockler/releases/download/v3.21.12/Tockler-3.21.12.dmg',
-        windows: 'https://github.com/MayGo/tockler/releases/download/v3.21.12/tockler-3.21.12-setup-win.exe',
-        linux: 'https://github.com/MayGo/tockler/releases/download/v3.21.12/Tockler-3.21.12.AppImage'
-    };
-
     return (
         <>
             <VStack gap={8} pt={12} align="center">
                 <TocklerLogoText height="100px" />
                 <Text fontSize="md">Track your time or look when and what were you doing at some point in time.</Text>
-                <VStack gap={4}>
-                    <HStack>
-                        <Button variant="outline" asChild>
-                            <a href={downloadUrls.mac}>
-                                <FaApple /> macOS
-                            </a>
-                        </Button>
-                        <Button variant="outline" asChild>
-                            <a href={downloadUrls.windows}>
-                                <FaWindows /> Windows
-                            </a>
-                        </Button>
-                        <Button variant="outline" asChild>
-                            <a href={downloadUrls.linux}>
-                                <FaLinux /> Linux
-                            </a>
-                        </Button>
-                    </HStack>
-                    <Text fontSize="xs">
-                        Latest: v{version}.{' '}
-                        <Link color="blue.500" href="https://github.com/MayGo/tockler/releases/latest" target="_blank">
-                            Releases Page
-                        </Link>
-                    </Text>
-                </VStack>
+
+                {release && <DownloadOptions release={release} />}
+
+                <Text fontSize="xs">
+                    Latest: v{version}.{' '}
+                    <Link color="blue.500" href="https://github.com/MayGo/tockler/releases/latest" target="_blank">
+                        Releases Page
+                    </Link>
+                </Text>
+
                 <Text fontSize="2xl">
                     Tockler is{' '}
                     <Text as="span" color="primary" fontWeight="bold" bg="whiteAlpha.800" p={2} px={4} rounded="full">

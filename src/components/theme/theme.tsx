@@ -1,6 +1,7 @@
 'use client';
 import { createSystem, defaultConfig, defineConfig, mergeConfigs } from '@chakra-ui/react';
 
+import { buttonRecipe } from './button.receipe';
 import { mainGray } from './theme.utils';
 
 export const MAIN_THEME_COLOR = '#7C3AED';
@@ -8,7 +9,7 @@ export const MAIN_THEME_COLOR = '#7C3AED';
 const myConfig = defineConfig({
     globalCss: {
         html: {
-            colorPalette: 'black',
+            colorPalette: 'gray',
             scrollBehavior: 'smooth !important',
 
             '--chakra-radii-l1': 'xl',
@@ -44,21 +45,10 @@ const myConfig = defineConfig({
                 l2: { value: '{radii.2xl}' },
                 l3: { value: '{radii.2xl}' }
             }
+        },
+        recipes: {
+            button: buttonRecipe
         }
-        // recipes: {
-        //     Button: {
-        //         variants: {
-        //             variant: {
-        //                 custom: {
-        //                     borderRadius: 'full',
-        //                     bg: 'blue',
-        //                     color: 'white',
-        //                     textTransform: 'uppercase'
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
     }
 });
 
