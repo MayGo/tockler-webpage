@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex, Heading, Link, Stack, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, Stack, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { FaApple, FaLinux, FaWindows } from 'react-icons/fa';
 import { Button } from '~/components/ui/button';
@@ -44,37 +44,52 @@ const DownloadOption = ({ label, download, icon }: DownloadOptionProps) => {
 
 interface DownloadOptionsProps {
     release: TocklerRelease;
+    version: string;
 }
 
 type Platform = 'macos' | 'windows' | 'linux';
 
-export const DownloadOptions = ({ release }: DownloadOptionsProps) => {
+export const DownloadOptions = ({ release, version }: DownloadOptionsProps) => {
     const [platform, setPlatform] = useState<Platform>();
 
     return (
         <Box maxW="600px" w="100%">
             <Stack direction="column" gap={4}>
-                <Flex justify="center" gap={2} mb={4}>
-                    <Button onClick={() => setPlatform('macos')} variant={platform === 'macos' ? 'solid' : 'outline'}>
-                        <Flex align="center" gap={2}>
-                            <FaApple /> macOS
-                        </Flex>
-                    </Button>
-                    <Button
-                        onClick={() => setPlatform('windows')}
-                        variant={platform === 'windows' ? 'solid' : 'outline'}
-                    >
-                        <Flex align="center" gap={2}>
-                            <FaWindows /> Windows
-                        </Flex>
-                    </Button>
-                    <Button onClick={() => setPlatform('linux')} variant={platform === 'linux' ? 'solid' : 'outline'}>
-                        <Flex align="center" gap={2}>
-                            <FaLinux /> Linux
-                        </Flex>
-                    </Button>
-                </Flex>
+                <VStack mb={4} alignSelf="center">
+                    <Flex justify="center" gap={2}>
+                        <Button
+                            onClick={() => setPlatform('macos')}
+                            variant={platform === 'macos' ? 'solid' : 'outline'}
+                        >
+                            <Flex align="center" gap={2}>
+                                <FaApple /> macOS
+                            </Flex>
+                        </Button>
+                        <Button
+                            onClick={() => setPlatform('windows')}
+                            variant={platform === 'windows' ? 'solid' : 'outline'}
+                        >
+                            <Flex align="center" gap={2}>
+                                <FaWindows /> Windows
+                            </Flex>
+                        </Button>
+                        <Button
+                            onClick={() => setPlatform('linux')}
+                            variant={platform === 'linux' ? 'solid' : 'outline'}
+                        >
+                            <Flex align="center" gap={2}>
+                                <FaLinux /> Linux
+                            </Flex>
+                        </Button>
+                    </Flex>
 
+                    <Text fontSize="xs">
+                        Latest: v{version}.{' '}
+                        <Link color="blue.500" href="https://github.com/MayGo/tockler/releases/latest" target="_blank">
+                            Releases Page
+                        </Link>
+                    </Text>
+                </VStack>
                 {platform === 'macos' && (
                     <Stack direction="column" gap={3}>
                         <DownloadOption
