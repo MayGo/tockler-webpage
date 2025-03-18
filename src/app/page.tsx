@@ -23,7 +23,7 @@ export default async function Home() {
                     <br /> See exactly how you spend your time on your computer.
                 </Text>
 
-                <Box bg="blue.500/10" p={4} borderRadius="lg" border="1px solid" borderColor="blue.100/50">
+                <Box bg="blue.500/10" p={4} borderRadius="2xl" border="1px solid" borderColor="blue.100/50">
                     <Flex direction="column" gap={3}>
                         <Flex align="center" justify="center" gap={2}>
                             <FaLock />
