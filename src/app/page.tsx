@@ -65,7 +65,7 @@ export default async function Home() {
                     <Text fontSize="md" textAlign="center" lineHeight="1.7">
                         Tockler is maintained as an open-source project.
                         <br /> If you find it useful, consider{' '}
-                        <Link href="https://github.com/sponsors/MayGo">
+                        <Link href="https://github.com/MayGo/tockler">
                             <b>supporting its development on GitHub</b>
                         </Link>
                         .
